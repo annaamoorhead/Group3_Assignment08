@@ -15,5 +15,6 @@ for row in cursor:
     print(row)
     
     
-huie;hf
-    
+print("The maximum quantity that I am able to purchase of the product" +str(row.ProductID) + "by the brand" + str(row.BrandID)+ "is" + str(row.MaxQtyToPurchase))
+
+  
