@@ -17,3 +17,11 @@ conn = pyodbc.connect('Driver={SQL Server};'
                       'uid=IS4010Login;'
                       'pwd=P@ssword2;')
 cursor = conn.cursor()
+cursor.execute('SELECT c.MaxQtyToPurchase, b.Brand, p.Description FROM tCouponDetail c, tBrand b, tProduct p WHERE c.ProductID=p.ProductID AND b.BrandID=p.BrandID AND p.ProductID=2')
+
+product=list()
+
+for row in cursor:
+    print()
+    
+print(product)
