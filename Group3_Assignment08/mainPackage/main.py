@@ -10,9 +10,9 @@
 
 from tableConnectionPackage.tableConnection import *
 
-
-for row in cursor:
-    BrandID = row[1] 
-    ProductID= row[0]
-    MaxQtyToPurchase= row[2]
-    print("The maximum quantity that I am able to purchase of the product " + str(ProductID) + " by the brand " + str(BrandID)+ " is " + str(MaxQtyToPurchase))
+if __name__ == "__main__":
+    for row in cursor:
+        BrandID = row[1] 
+        ProductID= row[0]
+        MaxQtyToPurchase= row[2]
+        print("The maximum quantity that I am able to purchase of the product " + str(ProductID) + " by the brand " + str(BrandID)+ " is " + str(MaxQtyToPurchase))
