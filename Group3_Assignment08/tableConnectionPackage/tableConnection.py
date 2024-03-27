@@ -13,14 +13,8 @@
 import pyodbc
 conn = pyodbc.connect('Driver={SQL Server};'
                       'Server=lcb-sql.uccob.uc.edu\\nicholdw;'
-                      'Database=IS4010;'
+                      'Database=GroceryStoreSimulator;'
                       'uid=IS4010Login;'
                       'pwd=P@ssword2;')
 cursor = conn.cursor()
-
-
-#SELECT c.MaxQtyToPurchase, b.Brand, p.Description FROM tCouponDetail c, tBrand b, tProduct p WHERE c.ProductID=p.ProductID AND b.BrandID=p.BrandID AND p.ProductID=2;
-
-# SELECT c.MaxQtyToPurchase, b.Brand, p.Description
-# FROM tCouponDetail c, tBrand b, tProduct p
-# WHERE c.ProductID=p.ProductID AND b.BrandID=p.BrandID;
+cursor.execute('SELECT c.MaxQtyToPurchase, b.Brand, p.Description FROM tCouponDetail c, tBrand b, tProduct p WHERE c.ProductID=p.ProductID AND b.BrandID=p.BrandID AND p.ProductID=2')

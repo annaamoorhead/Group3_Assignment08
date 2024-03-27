@@ -8,20 +8,10 @@
 # Citations:
 # Anything else that's relevant:
 
-
-
-import pyodbc
-conn = pyodbc.connect('Driver={SQL Server};'
-                      'Server=lcb-sql.uccob.uc.edu\\nicholdw;'
-                      'Database=IS4010;'
-                      'uid=IS4010Login;'
-                      'pwd=P@ssword2;')
-cursor = conn.cursor()
-cursor.execute('SELECT c.MaxQtyToPurchase, b.Brand, p.Description FROM tCouponDetail c, tBrand b, tProduct p WHERE c.ProductID=p.ProductID AND b.BrandID=p.BrandID AND p.ProductID=2')
-
-product=list()
+from tableConnectionPackage.tableConnection import *
+from functionPackage.function import *
 
 for row in cursor:
-    print()
+    print(row)
     
-print(product)
+    
