@@ -14,4 +14,4 @@ from functionPackage.function import *
 for row in cursor:
     print(row)
     
-    
+    print('hi')
